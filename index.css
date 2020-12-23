@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#animationCanvas {
+  border: 1px solid silver;
+  width: 600px;
+  height: 600px;
+}

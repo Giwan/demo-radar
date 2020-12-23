@@ -1,0 +1,15 @@
+{
+  "name": "radar-ani",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Giwan Persaud",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
