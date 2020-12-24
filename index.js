@@ -1,10 +1,17 @@
 const canvas = document.getElementById("animationCanvas");
 const ctx = canvas.getContext("2d");
 
+let isRadarOn = true;
+
 const center = {
   cx: 300,
   cy: 300,
 };
+
+document.body.addEventListener("click", () => {
+  isRadarOn = !isRadarOn;
+  drawRadarScanner(center);
+});
 
 // draw center circle
 const drawContainerCircle = ({ cx, cy }) => {
@@ -53,6 +60,11 @@ const drawRadarScanner = ({ x, y, cx, cy }) => {
       drawContainerCircle({ cx, cy });
       angle = startAngle;
     }
+
+    if (!isRadarOn) {
+      return;
+    }
+
     angle -= 1;
     drawRadarScanner(getPointsOnCircle({ radius, angle, cx, cy }));
   });
