@@ -53,21 +53,27 @@ const drawRadarScanner = ({ x, y, cx, cy }) => {
   ctx.lineTo(x, y);
   ctx.stroke();
 
-  requestAnimationFrame(() => {
-    if (angle <= endAngle) {
-      ctx.clearRect(0, 0, 600, 600);
-      ctx.strokeStyle = "white";
-      drawContainerCircle({ cx, cy });
-      angle = startAngle;
-    }
+  requestAnimationFrame(() => draw({ cx, cy }));
+};
 
-    if (!isRadarOn) {
-      return;
-    }
+/**
+ * This method still uses global variabes
+ * TODO avoid using globals (closure)
+ * @param {*} param0
+ */
+const draw = ({ cx, cy }) => {
+  if (angle <= endAngle) {
+    ctx.clearRect(0, 0, 600, 600);
+    drawContainerCircle({ cx, cy });
+    angle = startAngle;
+  }
 
-    angle -= 1;
-    drawRadarScanner(getPointsOnCircle({ radius, angle, cx, cy }));
-  });
+  if (!isRadarOn) {
+    return;
+  }
+
+  angle -= 0.35;
+  drawRadarScanner(getPointsOnCircle({ radius, angle, cx, cy }));
 };
 
 const getPointsOnCircle = ({ radius, angle, cx, cy }) => {
