@@ -34,14 +34,6 @@ const drawCenterCircle = ({ cx, cy }) => {
   ctx.fill();
 };
 
-let line = {
-  y: 50,
-  x: 0,
-  r: Math.sqrt(Math.pow(0, 2) + Math.pow(50, 2)),
-};
-
-ctx.lineWidth = 2;
-
 const startAngle = 180;
 const endAngle = -startAngle;
 let angle = startAngle;
