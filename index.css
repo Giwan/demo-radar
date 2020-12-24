@@ -6,6 +6,6 @@ body {
 
 #animationCanvas {
   border: 1px solid silver;
-  width: 600px;
-  height: 600px;
+  /* width: 600px;
+  height: 600px; */
 }
